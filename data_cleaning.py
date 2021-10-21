@@ -67,5 +67,9 @@ DF = pd.concat([df1, df2, df3])
 # Remove all of the usernames from the texts and replace all the numbers with "@"
 DF["text"] = remove_usernames_and_replace_numbers(DF["text"])
 
+# Remove rows with Null/NaN values.
+DF.dropna(inplace=True)
+
+# Save the DataFrame as a csv
 DF.to_csv("data/Cleaned Data/emotion_data_cleaned.csv", index=False)
 
